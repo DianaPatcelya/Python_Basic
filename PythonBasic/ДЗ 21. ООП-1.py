@@ -13,7 +13,6 @@ class Auto:
     def birthday(self):
         self.age += 1
 
-
     def stop(self):
         print("stop")
 
