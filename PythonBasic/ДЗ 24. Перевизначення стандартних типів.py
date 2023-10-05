@@ -9,9 +9,6 @@ class MyString(str):
     def __sub__(self, other):
         return MyString(str(self).replace(str(other), "", 1))
 
-    def __rsub__(self, other):
-        return MyString(str(other).replace(str(self), "", 1))
-
 
 print(MyString("New") + MyString(890) + "         " + type(MyString("New") + MyString(890)))
 print((MyString(1234) + 5678) + "         " + type(MyString(1234) + 5678))
@@ -20,6 +17,8 @@ print((MyString("New") + 77) + "          " + type(MyString("New") + 77))
 print((MyString("New") + True) + "            " + type(MyString("New") + True))
 print((MyString("New") + ["s", " ", 23]) + "          " + type(MyString("New") + ["s", " ", 23]))
 print((MyString("New") + None) + "            " + type(MyString("New") + None))
+print((None + MyString("New")) + "            " + type(MyString("New") + None))
+print(5678 + (MyString(1234)) + "         " + type(MyString(1234) + 5678))
 
 print("-" * 50)
 
