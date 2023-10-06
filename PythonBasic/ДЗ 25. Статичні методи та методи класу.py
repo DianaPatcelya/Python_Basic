@@ -37,15 +37,15 @@ class Car:
         return f"{self.model} - {self.year} - {self.fuel_type} - {self.color}"
 
 
-car_1 = Car('Zaz', 1979, 'дизель', 'black')
-car_2 = Car('BMW', 2000, 'бензин', 'red')
-car_3 = Car('VOLVO', 2012, 'електрикаcccc', 'black')
-car_4 = Car('Mersedes', 2012, 'гібрид', 'black')
+car_1 = Car("Zaz", 1979, "дизель", "black")
+car_2 = Car("BMW", 2000, "бензин", "red")
+car_3 = Car("VOLVO", 2012, "електрикаcccc", "black")
+car_4 = Car("Mersedes", 2012, "гібрид", "black")
 
 for item in (car_1, car_2, car_3, car_4):
     print("-" * 50)
-    print('item:', item)
-    print('numbers:', item.numbers)
+    print("item:", item)
+    print("numbers:", item.numbers)
 
-print('COLORS:', Car.get_used_colors())
-print('NUMBER_OF_CARS:', Car.get_number_of_cars())
+print("COLORS:", Car.get_used_colors())
+print("NUMBER_OF_CARS:", Car.get_number_of_cars())
