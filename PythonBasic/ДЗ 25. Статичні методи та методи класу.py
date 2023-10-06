@@ -49,5 +49,3 @@ for item in (car_1, car_2, car_3, car_4):
     print("-" * 50)
     print("item:", item)
     print("numbers:", item.numbers)
-
-
