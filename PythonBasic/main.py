@@ -31,36 +31,20 @@ while True:
 
             current_date = datetime.now()
 
-            while True:
-                try:
-                    birth_date = input("Введіть дату народження (у форматі 01.01.2023): ")
-                    birth_date_obj = datetime.strptime(birth_date, "%d.%m.%Y")
+            birth_date_input = input("Введіть дату народження (у форматі 01.01.2023): ")
+            birth_date = Person.change_date(birth_date_input, current_date)
 
-                    if birth_date_obj > current_date:
-                        print("Помилка: Дата народження не може бути у майбутньому.")
-                    else:
-                        break
-                except ValueError:
-                    print("Помилка: Неправильний формат дати. Використовуйте формат 'дд.мм.рррр'.")
+            death_date = None
 
-            while True:
-                death_date = input("Введіть дату смерті (якщо є, у форматі 01.01.2023, інакше натисніть Enter): ")
-
-                if not death_date:
-                    break
-                try:
-                    death_date_obj = datetime.strptime(death_date, "%d.%m.%Y")
-                    if death_date_obj > current_date:
-                        print("Помилка: Дата смерті не може бути у майбутньому.")
-                    else:
-                        break
-                except ValueError:
-                    print("Помилка: Неправильний формат дати смерті. Використовуйте формат 'дд.мм.рррр'.")
+            death_input = input("Введіть дату смерті (якщо є, у форматі 01.01.2023, інакше натисніть Enter): ")
+            if death_input:
+                death_date = Person.change_date(death_input, current_date)
 
             gender = input("Введіть стать (m або f): ")
 
             person = Person(first_name, gender, birth_date, last_name, middle_name, death_date)
             db.add_person(person)
+
             print("Дані користувача були записані.")
 
         except ValueError as e:
